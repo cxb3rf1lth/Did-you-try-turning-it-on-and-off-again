@@ -127,15 +127,15 @@ When you launch the tool, you'll see this menu:
 
   Please select an optimization option:
 
-  [1]  System Information              (View system specs | Instant | Safe)
-  [2]  Clear Temporary Files          (Free disk space | 1-5 min | Safe)
-  [3]  Run Disk Cleanup              (Deep cleanup | 5-15 min | Safe)
-  [4]  Optimize System Services       (Disable telemetry | 1 min | Safe)
-  [5]  Optimize Visual Effects        (Better performance | Instant | Safe)
-  [6]  Network Optimization          (Fix network issues | 1 min | Safe)
-  [7]  Optimize Drives (SSD/HDD)      (Defrag/TRIM | 5-30 min | Safe)
-  [8]  Clear Windows Update Cache     (Fix updates | 2-5 min | Safe)
-  [9]  System Health Check (SFC)      (Repair files | 10-20 min | Safe)
+  [1]  System Information              (View system specs - Instant - Safe)
+  [2]  Clear Temporary Files          (Free disk space - 1-5 min - Safe)
+  [3]  Run Disk Cleanup              (Deep cleanup - 5-15 min - Safe)
+  [4]  Optimize System Services       (Disable telemetry - 1 min - Safe)
+  [5]  Optimize Visual Effects        (Better performance - Instant - Safe)
+  [6]  Network Optimization          (Fix network issues - 1 min - Safe)
+  [7]  Optimize Drives (SSD/HDD)      (Defrag/TRIM - 5-30 min - Safe)
+  [8]  Clear Windows Update Cache     (Fix updates - 2-5 min - Safe)
+  [9]  System Health Check (SFC)      (Repair files - 10-20 min - Safe)
 
   [A]  Run All Optimizations (Safe Mode)  ⭐ Recommended!
   [H]  Show First-Time User Guide

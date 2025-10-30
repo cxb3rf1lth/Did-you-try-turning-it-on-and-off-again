@@ -352,23 +352,23 @@ function Show-Menu {
     Write-Host "  Please select an optimization option:" -ForegroundColor Yellow
     Write-Host ""
     Write-Host "  [1]  System Information" -ForegroundColor White -NoNewline
-    Write-Host "              (View system specs | Instant | Safe)" -ForegroundColor DarkGray
+    Write-Host "              (View system specs - Instant - Safe)" -ForegroundColor DarkGray
     Write-Host "  [2]  Clear Temporary Files" -ForegroundColor White -NoNewline
-    Write-Host "          (Free disk space | 1-5 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "          (Free disk space - 1-5 min - Safe)" -ForegroundColor DarkGray
     Write-Host "  [3]  Run Disk Cleanup" -ForegroundColor White -NoNewline
-    Write-Host "              (Deep cleanup | 5-15 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "              (Deep cleanup - 5-15 min - Safe)" -ForegroundColor DarkGray
     Write-Host "  [4]  Optimize System Services" -ForegroundColor White -NoNewline
-    Write-Host "       (Disable telemetry | 1 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "       (Disable telemetry - 1 min - Safe)" -ForegroundColor DarkGray
     Write-Host "  [5]  Optimize Visual Effects" -ForegroundColor White -NoNewline
-    Write-Host "        (Better performance | Instant | Safe)" -ForegroundColor DarkGray
+    Write-Host "        (Better performance - Instant - Safe)" -ForegroundColor DarkGray
     Write-Host "  [6]  Network Optimization" -ForegroundColor White -NoNewline
-    Write-Host "          (Fix network issues | 1 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "          (Fix network issues - 1 min - Safe)" -ForegroundColor DarkGray
     Write-Host "  [7]  Optimize Drives (SSD/HDD)" -ForegroundColor White -NoNewline
-    Write-Host "      (Defrag/TRIM | 5-30 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "      (Defrag/TRIM - 5-30 min - Safe)" -ForegroundColor DarkGray
     Write-Host "  [8]  Clear Windows Update Cache" -ForegroundColor White -NoNewline
-    Write-Host "     (Fix updates | 2-5 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "     (Fix updates - 2-5 min - Safe)" -ForegroundColor DarkGray
     Write-Host "  [9]  System Health Check (SFC)" -ForegroundColor White -NoNewline
-    Write-Host "      (Repair files | 10-20 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "      (Repair files - 10-20 min - Safe)" -ForegroundColor DarkGray
     Write-Host ""
     Write-Host "  [A]  Run All Optimizations (Safe Mode)" -ForegroundColor Green -NoNewline
     Write-Host "  ⭐ Recommended!" -ForegroundColor Yellow
