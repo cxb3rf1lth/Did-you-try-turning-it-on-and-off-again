@@ -1,0 +1,44 @@
+{
+  "optimizationSettings": {
+    "clearTempFiles": true,
+    "runDiskCleanup": true,
+    "optimizeServices": true,
+    "optimizeVisualEffects": true,
+    "optimizeNetwork": true,
+    "optimizeDrives": true,
+    "clearWindowsUpdateCache": false,
+    "runSystemHealthCheck": false
+  },
+  "servicesToDisable": [
+    {
+      "name": "DiagTrack",
+      "displayName": "Connected User Experiences and Telemetry",
+      "description": "Telemetry service - safe to disable"
+    },
+    {
+      "name": "dmwappushservice",
+      "displayName": "WAP Push Message Routing Service",
+      "description": "Mobile device service - not needed on desktop"
+    },
+    {
+      "name": "SysMain",
+      "displayName": "Superfetch/SysMain",
+      "description": "Prefetch service - can be disabled on SSDs"
+    }
+  ],
+  "tempFolders": [
+    "%TEMP%",
+    "%WINDIR%\\Temp",
+    "%LOCALAPPDATA%\\Temp"
+  ],
+  "safetySettings": {
+    "requireConfirmation": true,
+    "createRestorePoint": false,
+    "verboseLogging": true
+  },
+  "performanceTargets": {
+    "expectedDiskSpaceFreed": "2-20 GB",
+    "expectedBootTimeImprovement": "10-30%",
+    "maintenanceFrequency": "Monthly"
+  }
+}
