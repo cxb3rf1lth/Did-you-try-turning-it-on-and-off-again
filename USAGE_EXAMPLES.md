@@ -245,7 +245,7 @@ This automatically:
 
 **Note:** The tool is designed for interactive use through the menu. For automation needs, see the "Creating a Custom Automation Script" section below.
 
-**Current Limitation:** The `Optimize-Windows.ps1` script automatically starts the interactive tool when executed, so you cannot directly dot-source it (load its functions into your PowerShell session without running the tool) to call individual functions. 
+**Current Limitation:** The `Optimize-Windows.ps1` script automatically starts the interactive tool when executed, so you cannot directly dot-source it (import its functions) to call individual functions. 
 
 If you need to automate specific optimization tasks, you have two options:
 
@@ -254,7 +254,7 @@ If you need to automate specific optimization tasks, you have two options:
 
 **Understanding the Menu Options (Reference):**
 
-The functions below are what powers each menu option in the interactive tool. This list helps you understand what each menu option does internally and can guide you in creating custom automation scripts.
+The functions below are what power each menu option in the interactive tool. This list helps you understand what each menu option does internally and can guide you in creating custom automation scripts.
 
 - `Get-SystemInfo` - Display system information (Menu option [1])
 - `Clear-TemporaryFiles` - Remove temporary files (Menu option [2])
