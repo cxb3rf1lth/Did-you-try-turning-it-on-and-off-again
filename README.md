@@ -1,10 +1,10 @@
-# Windows Device Optimization Tool 🚀
+# Windows Device Optimization Tool
 
 > *"Have you tried turning it off and on again?"* - The universal IT solution
 
 A comprehensive PowerShell-based Windows optimization tool with an intuitive guided CLI interface. Safely optimize, clean, and improve your Windows system performance with easy-to-follow menus and detailed guidance.
 
-## 🌟 Features
+## Features
 
 ### System Optimization
 - **Temporary File Cleanup** - Remove unnecessary temp files and free up disk space
@@ -24,20 +24,20 @@ A comprehensive PowerShell-based Windows optimization tool with an intuitive gui
 - **System Information Display** - View detailed system specs
 
 ### User Experience
-- ✨ **Guided CLI Interface** - Easy-to-navigate menu system
-- 🎨 **Color-coded Output** - Visual feedback for all operations
-- ⚡ **One-Click Optimization** - Run all safe optimizations with option [A]
-- 🛡️ **Safety First** - Confirmations for potentially impactful changes
-- 📊 **Real-time Feedback** - See exactly what's being optimized
+- **Guided CLI Interface** - Easy-to-navigate menu system
+- **Color-coded Output** - Visual feedback for all operations
+- **One-Click Optimization** - Run all safe optimizations with option [A]
+- **Safety First** - Confirmations for potentially impactful changes
+- **Real-time Feedback** - See exactly what's being optimized
 
-## 📋 Requirements
+## Requirements
 
 - **Operating System**: Windows 10 or Windows 11
 - **PowerShell**: Version 5.1 or higher (included in Windows 10/11)
 - **Privileges**: Administrator rights required
 - **Disk Space**: At least 1GB free for cleanup operations
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Method 1: Download and Run (Recommended)
 
@@ -77,7 +77,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 powershell -ExecutionPolicy Bypass -File .\Optimize-Windows.ps1
 ```
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### Main Menu
 
@@ -183,7 +183,7 @@ When you launch the tool, you'll see this menu:
 - **Recommended**: For comprehensive system tune-up
 - **Time**: 15-30 minutes
 
-## 🛡️ Safety Features
+## Safety Features
 
 - **Administrator Check**: Ensures proper privileges before running
 - **Confirmation Prompts**: Asks before making significant changes
@@ -192,7 +192,7 @@ When you launch the tool, you'll see this menu:
 - **Error Handling**: Gracefully handles locked files and errors
 - **Detailed Logging**: See exactly what's being done
 
-## ⚠️ Important Notes
+## Important Notes
 
 ### Before Running
 1. **Close all programs** - Especially browsers and Office apps
@@ -206,13 +206,13 @@ When you launch the tool, you'll see this menu:
 - **Re-run periodically** - Monthly maintenance recommended
 
 ### What This Tool Does NOT Do
-- ❌ Does not delete personal files or documents
-- ❌ Does not uninstall programs
-- ❌ Does not modify BIOS/UEFI settings
-- ❌ Does not disable security features
-- ❌ Does not require internet connection
+- Does not delete personal files or documents
+- Does not uninstall programs
+- Does not modify BIOS/UEFI settings
+- Does not disable security features
+- Does not require internet connection
 
-## 🔧 Troubleshooting
+## Troubleshooting
 
 ### "Execution Policy" Error
 ```powershell
@@ -236,7 +236,7 @@ powershell -ExecutionPolicy Bypass -File .\Optimize-Windows.ps1
 - Close all programs and try again
 - Restart and run the script immediately after boot
 
-## 📊 Expected Results
+## Expected Results
 
 ### Typical Performance Improvements
 - **Disk Space**: 2-20GB freed (varies by system usage)
@@ -245,25 +245,25 @@ powershell -ExecutionPolicy Bypass -File .\Optimize-Windows.ps1
 - **Network**: Faster DNS lookups and browsing
 
 ### When to Run This Tool
-- ✅ System feels sluggish
-- ✅ Running low on disk space
-- ✅ After major Windows updates
-- ✅ Monthly maintenance routine
-- ✅ Before important work/presentations
-- ✅ After installing/uninstalling many programs
+- System feels sluggish
+- Running low on disk space
+- After major Windows updates
+- Monthly maintenance routine
+- Before important work/presentations
+- After installing/uninstalling many programs
 
-## 🤝 Contributing
+## Contributing
 
 Found a bug or have a suggestion? Feel free to:
 - Open an issue
 - Submit a pull request
 - Share your optimization ideas
 
-## 📜 License
+## License
 
 MIT License - Feel free to use and modify for your needs.
 
-## ⚡ Advanced Usage
+## Advanced Usage
 
 ### Run Specific Function from Command Line
 ```powershell
@@ -280,7 +280,7 @@ Create a scheduled task to run optimizations automatically:
 powershell.exe -ExecutionPolicy Bypass -File "C:\path\to\Optimize-Windows.ps1"
 ```
 
-## 💡 Tips for Best Results
+## Tips for Best Results
 
 1. **Run option [A] first** - Gets most optimizations done quickly
 2. **Close all apps** - Maximizes files that can be cleaned
@@ -288,7 +288,7 @@ powershell.exe -ExecutionPolicy Bypass -File "C:\path\to\Optimize-Windows.ps1"
 4. **Run monthly** - Keeps system in optimal condition
 5. **Monitor results** - Use option [1] to track improvements
 
-## 🎯 Common Use Cases
+## Common Use Cases
 
 ### Slow Computer Startup
 ```
@@ -316,7 +316,7 @@ Run: [A] Run All Optimizations
 Monthly or when system feels slow
 ```
 
-## 📞 Support
+## Support
 
 For issues, questions, or suggestions:
 - GitHub Issues: [Open an issue](https://github.com/cxb3rf1lth/Did-you-try-turning-it-on-and-off-again/issues)
@@ -325,6 +325,6 @@ For issues, questions, or suggestions:
 
 ---
 
-**Remember**: When in doubt, restart your computer! 🔄
+**Remember**: When in doubt, restart your computer!
 
-*Made with ❤️ for Windows users who want a faster, cleaner system*
+*Made with love for Windows users who want a faster, cleaner system*
