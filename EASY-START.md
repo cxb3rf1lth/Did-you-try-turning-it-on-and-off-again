@@ -4,10 +4,7 @@ This guide shows you the **simplest, most hassle-free** ways to run the Windows 
 
 ## 🎯 Method 1: Double-Click (Easiest!)
 
-**NEW!** Just double-click this file:
-```
-Quick-Start.bat
-```
+**NEW!** Just double-click this file: `Quick-Start.bat`
 
 That's it! The batch file will:
 - ✅ Automatically request Administrator privileges
