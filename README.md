@@ -39,7 +39,30 @@ A comprehensive PowerShell-based Windows optimization tool with an intuitive gui
 
 ## Quick Start
 
-### Method 1: Download and Run (Recommended)
+### 🚀 One-Click Launch (Easiest Method)
+
+**New!** The simplest way to get started - just run one command:
+
+```powershell
+# Clone the repository
+git clone https://github.com/cxb3rf1lth/Did-you-try-turning-it-on-and-off-again.git
+cd Did-you-try-turning-it-on-and-off-again
+
+# Option 1: Automated Setup + Launch (First-time users)
+.\Setup.ps1
+
+# Option 2: One-Click Launch (Anytime)
+.\Start-WindowsOptimizer.ps1
+```
+
+**What these scripts do:**
+- ✅ Automatically check for Administrator privileges
+- ✅ Configure PowerShell execution policy
+- ✅ Unblock the script files
+- ✅ Launch the optimization tool
+- ✅ (Setup.ps1 only) Optionally create a desktop shortcut
+
+### Method 1: Traditional Manual Launch
 
 1. **Download the script**:
    ```powershell
@@ -79,6 +102,16 @@ powershell -ExecutionPolicy Bypass -File .\Optimize-Windows.ps1
 
 ## Usage Guide
 
+### First-Time User Guide
+
+**New Feature!** When you launch the tool for the first time, you'll see an interactive welcome guide that explains:
+- 🎯 Quick start recommendations
+- 💡 Most common use cases
+- 🛡️ Safety features
+- ⚡ Estimated times for each operation
+
+The guide helps you get started immediately with confidence. You can access it anytime by pressing **[H]** from the main menu.
+
 ### Main Menu
 
 When you launch the tool, you'll see this menu:
@@ -94,16 +127,18 @@ When you launch the tool, you'll see this menu:
 
   Please select an optimization option:
 
-  [1]  System Information
-  [2]  Clear Temporary Files
-  [3]  Run Disk Cleanup
-  [4]  Optimize System Services
-  [5]  Optimize Visual Effects
-  [6]  Network Optimization
-  [7]  Optimize Drives (SSD/HDD)
-  [8]  Clear Windows Update Cache
-  [9]  System Health Check (SFC)
-  [A]  Run All Optimizations (Safe Mode)
+  [1]  System Information              (View system specs | Instant | Safe)
+  [2]  Clear Temporary Files          (Free disk space | 1-5 min | Safe)
+  [3]  Run Disk Cleanup              (Deep cleanup | 5-15 min | Safe)
+  [4]  Optimize System Services       (Disable telemetry | 1 min | Safe)
+  [5]  Optimize Visual Effects        (Better performance | Instant | Safe)
+  [6]  Network Optimization          (Fix network issues | 1 min | Safe)
+  [7]  Optimize Drives (SSD/HDD)      (Defrag/TRIM | 5-30 min | Safe)
+  [8]  Clear Windows Update Cache     (Fix updates | 2-5 min | Safe)
+  [9]  System Health Check (SFC)      (Repair files | 10-20 min | Safe)
+
+  [A]  Run All Optimizations (Safe Mode)  ⭐ Recommended!
+  [H]  Show First-Time User Guide
   [Q]  Quit
 ```
 
@@ -316,11 +351,18 @@ Run: [A] Run All Optimizations
 Monthly or when system feels slow
 ```
 
+## Documentation
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 2 simple steps
+- **[USAGE_EXAMPLES.md](USAGE_EXAMPLES.md)** - Detailed scenarios and examples (NEW!)
+- **[INSTALL.md](INSTALL.md)** - Complete installation guide
+- **README.md** - Full documentation (this file)
+
 ## Support
 
 For issues, questions, or suggestions:
 - GitHub Issues: [Open an issue](https://github.com/cxb3rf1lth/Did-you-try-turning-it-on-and-off-again/issues)
-- Documentation: This README
+- Documentation: See files above
 - Community: Check existing issues for solutions
 
 ---

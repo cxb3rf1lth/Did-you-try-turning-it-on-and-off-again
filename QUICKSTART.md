@@ -1,6 +1,42 @@
 # Quick Start Guide
 
-## 🚀 Get Started in 3 Steps
+## 🚀 Get Started in 2 Steps (New Automated Method!)
+
+### Step 1: Download
+```powershell
+git clone https://github.com/cxb3rf1lth/Did-you-try-turning-it-on-and-off-again.git
+cd Did-you-try-turning-it-on-and-off-again
+```
+
+### Step 2: Run Automated Setup
+```powershell
+.\Setup.ps1
+```
+
+**That's it!** The setup script will:
+- ✅ Check all prerequisites
+- ✅ Configure execution policy automatically
+- ✅ Unblock script files
+- ✅ Offer to create a desktop shortcut
+- ✅ Launch the optimization tool
+
+---
+
+## Alternative: One-Click Launch (Anytime)
+
+After initial setup, launch anytime with:
+```powershell
+.\Start-WindowsOptimizer.ps1
+```
+
+This wrapper automatically:
+- Requests Administrator privileges if needed
+- Configures necessary settings
+- Launches the optimization tool
+
+---
+
+## Traditional Method (Manual Setup)
 
 ### Step 1: Download
 ```powershell
@@ -60,6 +96,7 @@ Launch tool → Press 6 → Restart
 
 ## 📱 Need More Help?
 
+- **Usage Examples**: See [USAGE_EXAMPLES.md](USAGE_EXAMPLES.md) - Step-by-step scenarios! (NEW!)
 - **Full Documentation**: See [README.md](README.md)
 - **Installation Issues**: See [INSTALL.md](INSTALL.md)
 - **Problems**: Open an issue on GitHub

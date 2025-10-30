@@ -282,7 +282,63 @@ function Test-SystemHealth {
     Write-Host ""
 }
 
-# Main Menu
+# First-Time User Guide
+function Show-FirstTimeGuide {
+    Clear-Host
+    Write-Host ""
+    Write-Host "╔════════════════════════════════════════════════════════╗" -ForegroundColor Green
+    Write-Host "║                                                        ║" -ForegroundColor Green
+    Write-Host "║              👋 Welcome, First-Time User!             ║" -ForegroundColor Green
+    Write-Host "║                                                        ║" -ForegroundColor Green
+    Write-Host "╚════════════════════════════════════════════════════════╝" -ForegroundColor Green
+    Write-Host ""
+    Write-Host "This tool will help you optimize and clean your Windows system." -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "🎯 Quick Start Guide:" -ForegroundColor Yellow
+    Write-Host ""
+    Write-Host "  For First-Time Users:" -ForegroundColor White
+    Write-Host "  ────────────────────" -ForegroundColor Gray
+    Write-Host "  1. Press [1] to view your system information" -ForegroundColor White
+    Write-Host "  2. Press [A] to run all safe optimizations automatically" -ForegroundColor White
+    Write-Host "  3. Wait for the process to complete (10-20 minutes)" -ForegroundColor White
+    Write-Host "  4. Restart your computer for best results" -ForegroundColor White
+    Write-Host ""
+    Write-Host "  💡 Tip: Option [A] is the recommended starting point!" -ForegroundColor Green
+    Write-Host ""
+    Write-Host "  Each menu option includes:" -ForegroundColor Cyan
+    Write-Host "    • Clear description of what it does" -ForegroundColor Gray
+    Write-Host "    • Safety confirmations where needed" -ForegroundColor Gray
+    Write-Host "    • Real-time progress feedback" -ForegroundColor Gray
+    Write-Host "    • Estimated time to complete" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host "  ⚡ Common Use Cases:" -ForegroundColor Yellow
+    Write-Host "    • Computer running slow? → Press [4] then [A]" -ForegroundColor Gray
+    Write-Host "    • Low disk space? → Press [2], [3], then [8]" -ForegroundColor Gray
+    Write-Host "    • Network problems? → Press [6]" -ForegroundColor Gray
+    Write-Host "    • Monthly maintenance? → Press [A]" -ForegroundColor Gray
+    Write-Host ""
+    Write-Host "  🛡️  Safety Features:" -ForegroundColor Cyan
+    Write-Host "    ✓ Non-destructive operations (no personal files deleted)" -ForegroundColor Green
+    Write-Host "    ✓ Confirmation prompts for important changes" -ForegroundColor Green
+    Write-Host "    ✓ Most changes are reversible" -ForegroundColor Green
+    Write-Host ""
+    
+    $continue = Read-Host "Press Enter to continue to the main menu"
+    
+    # Mark as not first time
+    $configPath = Join-Path $PSScriptRoot "config.json"
+    if (Test-Path $configPath) {
+        try {
+            $config = Get-Content $configPath -Raw | ConvertFrom-Json
+            $config | Add-Member -NotePropertyName "firstTimeUser" -NotePropertyValue $false -Force
+            $config | ConvertTo-Json -Depth 10 | Set-Content $configPath
+        } catch {
+            # Silently continue if config update fails
+        }
+    }
+}
+
+# Main Menu with Enhanced Descriptions
 function Show-Menu {
     Clear-Host
     Write-Host "╔════════════════════════════════════════════════════════╗" -ForegroundColor Cyan
@@ -295,16 +351,28 @@ function Show-Menu {
     Write-Host ""
     Write-Host "  Please select an optimization option:" -ForegroundColor Yellow
     Write-Host ""
-    Write-Host "  [1]  System Information" -ForegroundColor White
-    Write-Host "  [2]  Clear Temporary Files" -ForegroundColor White
-    Write-Host "  [3]  Run Disk Cleanup" -ForegroundColor White
-    Write-Host "  [4]  Optimize System Services" -ForegroundColor White
-    Write-Host "  [5]  Optimize Visual Effects" -ForegroundColor White
-    Write-Host "  [6]  Network Optimization" -ForegroundColor White
-    Write-Host "  [7]  Optimize Drives (SSD/HDD)" -ForegroundColor White
-    Write-Host "  [8]  Clear Windows Update Cache" -ForegroundColor White
-    Write-Host "  [9]  System Health Check (SFC)" -ForegroundColor White
-    Write-Host "  [A]  Run All Optimizations (Safe Mode)" -ForegroundColor Green
+    Write-Host "  [1]  System Information" -ForegroundColor White -NoNewline
+    Write-Host "              (View system specs | Instant | Safe)" -ForegroundColor DarkGray
+    Write-Host "  [2]  Clear Temporary Files" -ForegroundColor White -NoNewline
+    Write-Host "          (Free disk space | 1-5 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "  [3]  Run Disk Cleanup" -ForegroundColor White -NoNewline
+    Write-Host "              (Deep cleanup | 5-15 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "  [4]  Optimize System Services" -ForegroundColor White -NoNewline
+    Write-Host "       (Disable telemetry | 1 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "  [5]  Optimize Visual Effects" -ForegroundColor White -NoNewline
+    Write-Host "        (Better performance | Instant | Safe)" -ForegroundColor DarkGray
+    Write-Host "  [6]  Network Optimization" -ForegroundColor White -NoNewline
+    Write-Host "          (Fix network issues | 1 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "  [7]  Optimize Drives (SSD/HDD)" -ForegroundColor White -NoNewline
+    Write-Host "      (Defrag/TRIM | 5-30 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "  [8]  Clear Windows Update Cache" -ForegroundColor White -NoNewline
+    Write-Host "     (Fix updates | 2-5 min | Safe)" -ForegroundColor DarkGray
+    Write-Host "  [9]  System Health Check (SFC)" -ForegroundColor White -NoNewline
+    Write-Host "      (Repair files | 10-20 min | Safe)" -ForegroundColor DarkGray
+    Write-Host ""
+    Write-Host "  [A]  Run All Optimizations (Safe Mode)" -ForegroundColor Green -NoNewline
+    Write-Host "  ⭐ Recommended!" -ForegroundColor Yellow
+    Write-Host "  [H]  Show First-Time User Guide" -ForegroundColor Cyan
     Write-Host "  [Q]  Quit" -ForegroundColor Red
     Write-Host ""
 }
@@ -344,6 +412,27 @@ function Start-OptimizationTool {
         exit
     }
     
+    # Check if this is the first time running the tool
+    $configPath = Join-Path $PSScriptRoot "config.json"
+    $isFirstTime = $true
+    
+    if (Test-Path $configPath) {
+        try {
+            $config = Get-Content $configPath -Raw | ConvertFrom-Json
+            if ($config.PSObject.Properties.Name -contains "firstTimeUser") {
+                $isFirstTime = $config.firstTimeUser
+            }
+        } catch {
+            # If config can't be read, treat as first time
+            $isFirstTime = $true
+        }
+    }
+    
+    # Show first-time guide if needed
+    if ($isFirstTime) {
+        Show-FirstTimeGuide
+    }
+    
     do {
         Show-Menu
         $choice = Read-Host "Enter your choice"
@@ -360,6 +449,8 @@ function Start-OptimizationTool {
             '9' { Test-SystemHealth; pause }
             'A' { Start-AllOptimizations; pause }
             'a' { Start-AllOptimizations; pause }
+            'H' { Show-FirstTimeGuide; pause }
+            'h' { Show-FirstTimeGuide; pause }
             'Q' { Write-Info "Thank you for using Windows Optimization Tool!"; return }
             'q' { Write-Info "Thank you for using Windows Optimization Tool!"; return }
             default { Write-Warning "Invalid choice. Please try again."; Start-Sleep -Seconds 2 }
