@@ -245,24 +245,27 @@ This automatically:
 
 **Note:** The tool is designed for interactive use through the menu. For automation needs, see the "Creating a Custom Automation Script" section below.
 
-**Current Limitation:** The `Optimize-Windows.ps1` script automatically starts the interactive tool when executed, so you cannot directly dot-source it to call individual functions. 
+**Current Limitation:** The `Optimize-Windows.ps1` script automatically starts the interactive tool when executed, so you cannot directly dot-source it (load its functions into your PowerShell session without running the tool) to call individual functions. 
 
 If you need to automate specific optimization tasks, you have two options:
 
 1. **Use the interactive tool** - Launch it and manually select options
 2. **Create a custom automation script** - See the section below for examples
 
-Available optimization functions in the main script (reference only):
-- `Get-SystemInfo` - Display system information
-- `Clear-TemporaryFiles` - Remove temporary files
-- `Start-DiskCleanup` - Run Windows Disk Cleanup
-- `Optimize-Services` - Disable non-essential services
-- `Optimize-VisualEffects` - Adjust visual effects for performance
-- `Optimize-Network` - Reset network settings
-- `Optimize-Drives` - Optimize drives (TRIM/defrag)
-- `Clear-WindowsUpdateCache` - Clear Windows Update cache
-- `Test-SystemHealth` - Run System File Checker
-- `Start-AllOptimizations` - Run all safe optimizations
+**Understanding the Menu Options (Reference):**
+
+The functions below are what powers each menu option in the interactive tool. This list helps you understand what each menu option does internally and can guide you in creating custom automation scripts.
+
+- `Get-SystemInfo` - Display system information (Menu option [1])
+- `Clear-TemporaryFiles` - Remove temporary files (Menu option [2])
+- `Start-DiskCleanup` - Run Windows Disk Cleanup (Menu option [3])
+- `Optimize-Services` - Disable non-essential services (Menu option [4])
+- `Optimize-VisualEffects` - Adjust visual effects for performance (Menu option [5])
+- `Optimize-Network` - Reset network settings (Menu option [6])
+- `Optimize-Drives` - Optimize drives (TRIM/defrag) (Menu option [7])
+- `Clear-WindowsUpdateCache` - Clear Windows Update cache (Menu option [8])
+- `Test-SystemHealth` - Run System File Checker (Menu option [9])
+- `Start-AllOptimizations` - Run all safe optimizations (Menu option [A])
 
 ### Scheduled Automation
 
