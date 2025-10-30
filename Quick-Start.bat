@@ -21,7 +21,7 @@ if %errorlevel% neq 0 (
 )
 
 REM Launch the optimizer with proper permissions
-set "SCRIPT_PATH=%~dp0Start-WindowsOptimizer.ps1"
-powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell -ArgumentList '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', '%SCRIPT_PATH%' -Verb RunAs"
+cd /d "%~dp0"
+powershell -NoProfile -ExecutionPolicy Bypass -Command "Start-Process PowerShell -ArgumentList '-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', '.\Start-WindowsOptimizer.ps1' -Verb RunAs -WorkingDirectory '%CD%'"
 
 exit /b 0
