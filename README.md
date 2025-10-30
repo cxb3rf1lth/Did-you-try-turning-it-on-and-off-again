@@ -351,11 +351,18 @@ Run: [A] Run All Optimizations
 Monthly or when system feels slow
 ```
 
+## Documentation
+
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 2 simple steps
+- **[USAGE_EXAMPLES.md](USAGE_EXAMPLES.md)** - Detailed scenarios and examples (NEW!)
+- **[INSTALL.md](INSTALL.md)** - Complete installation guide
+- **README.md** - Full documentation (this file)
+
 ## Support
 
 For issues, questions, or suggestions:
 - GitHub Issues: [Open an issue](https://github.com/cxb3rf1lth/Did-you-try-turning-it-on-and-off-again/issues)
-- Documentation: This README
+- Documentation: See files above
 - Community: Check existing issues for solutions
 
 ---

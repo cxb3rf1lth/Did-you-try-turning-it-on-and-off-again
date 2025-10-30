@@ -96,6 +96,7 @@ Launch tool → Press 6 → Restart
 
 ## 📱 Need More Help?
 
+- **Usage Examples**: See [USAGE_EXAMPLES.md](USAGE_EXAMPLES.md) - Step-by-step scenarios! (NEW!)
 - **Full Documentation**: See [README.md](README.md)
 - **Installation Issues**: See [INSTALL.md](INSTALL.md)
 - **Problems**: Open an issue on GitHub
