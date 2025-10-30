@@ -39,9 +39,27 @@ A comprehensive PowerShell-based Windows optimization tool with an intuitive gui
 
 ## Quick Start
 
-### 🚀 One-Click Launch (Easiest Method)
+### ⚡ Super Easy Method (NEW! - No PowerShell Knowledge Required)
 
-**New!** The simplest way to get started - just run one command:
+**The absolute easiest way** - no commands, no configuration needed:
+
+1. **Download** the repository (download ZIP or clone)
+2. **Double-click** on `Quick-Start.bat`
+3. **Done!** The tool launches automatically with all permissions
+
+**That's it!** The batch file handles everything:
+- ✅ Automatically requests Administrator privileges
+- ✅ Bypasses execution policy issues
+- ✅ Configures all necessary settings
+- ✅ Launches the optimization tool
+
+📖 **See [EASY-START.md](EASY-START.md) for complete hassle-free instructions**
+
+---
+
+### 🚀 PowerShell Method (For PowerShell Users)
+
+If you prefer using PowerShell:
 
 ```powershell
 # Clone the repository
@@ -353,8 +371,9 @@ Monthly or when system feels slow
 
 ## Documentation
 
+- **[EASY-START.md](EASY-START.md)** - ⭐ Easiest ways to run (NO PowerShell knowledge needed!) **NEW!**
 - **[QUICKSTART.md](QUICKSTART.md)** - Get started in 2 simple steps
-- **[USAGE_EXAMPLES.md](USAGE_EXAMPLES.md)** - Detailed scenarios and examples (NEW!)
+- **[USAGE_EXAMPLES.md](USAGE_EXAMPLES.md)** - Detailed scenarios and examples
 - **[INSTALL.md](INSTALL.md)** - Complete installation guide
 - **README.md** - Full documentation (this file)
 
