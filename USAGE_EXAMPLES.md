@@ -243,17 +243,24 @@ This automatically:
 
 ### Running Specific Function from Command Line
 
-You can call specific functions directly:
+**Note:** For most users, we recommend using the interactive menu instead of calling functions directly. This is for advanced users who need automation.
+
+You can call specific functions directly by loading them into a PowerShell session:
 
 ```powershell
-# Source the main script
-. .\Optimize-Windows.ps1
+# Load functions without auto-executing
+# Note: This will start the tool normally, so you'll need to exit it first
+# Then you can call functions in the same PowerShell session
 
-# Run a specific function
-Clear-TemporaryFiles
+# Alternative: Create a custom automation script
+# Create a new file: MyCustomOptimization.ps1
+$scriptDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+. "$scriptDir\Optimize-Windows.ps1" -NoExecute  # If supported
+
+# Or manually extract functions if needed for automation
 ```
 
-Available functions:
+Available functions (when loaded):
 - `Get-SystemInfo`
 - `Clear-TemporaryFiles`
 - `Start-DiskCleanup`
@@ -265,28 +272,48 @@ Available functions:
 - `Test-SystemHealth`
 - `Start-AllOptimizations`
 
+**Recommended:** For automation, use the scheduled task method below which runs the full tool.
+
 ### Scheduled Automation
 
-Create a scheduled task to run optimizations automatically:
+**Note:** The current version of the tool is designed for interactive use. For true automation, you would need to create a custom script or modify the tool to support command-line parameters.
+
+For now, you can schedule reminders to run the tool manually:
 
 1. Open Task Scheduler (`taskschd.msc`)
 2. Create New Task
 3. Set trigger (e.g., Monthly on 1st day)
 4. Set action:
    - Program: `powershell.exe`
-   - Arguments: `-ExecutionPolicy Bypass -NoProfile -File "C:\path\to\Optimize-Windows.ps1" -WindowStyle Hidden`
+   - Arguments: `-ExecutionPolicy Bypass -NoProfile -Command "& 'C:\path\to\Start-WindowsOptimizer.ps1'"`
 5. Set to run with highest privileges
 
-### Silent/Unattended Mode
+**This will launch the interactive tool where you can then select option [A] for all optimizations.**
 
-For automation scripts:
+### Creating a Custom Automation Script
+
+If you need true unattended automation, create a custom wrapper script:
 
 ```powershell
-# Source the script and run specific functions
-. .\Optimize-Windows.ps1
-Clear-TemporaryFiles
-Optimize-VisualEffects
-# Exit without prompts
+# MyAutomatedOptimization.ps1
+# This is a template for creating your own automation
+
+# Check admin privileges
+if (-not ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator)) {
+    Write-Host "Requires Administrator privileges"
+    exit
+}
+
+# Clear temp files manually
+$tempFolders = @("$env:TEMP", "$env:WINDIR\Temp")
+foreach ($folder in $tempFolders) {
+    Get-ChildItem $folder -Recurse -ErrorAction SilentlyContinue | Remove-Item -Force -Recurse -ErrorAction SilentlyContinue
+}
+
+# Run disk cleanup
+Start-Process cleanmgr.exe -ArgumentList "/sagerun:1" -Wait -NoNewWindow
+
+# Add other optimizations as needed
 ```
 
 ---
